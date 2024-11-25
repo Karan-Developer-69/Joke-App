@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTING SITE FOR CODE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        *::-webkit-scrollbar {
+            /* width: 12px; */
+            /* background: linear-gradient(to bottom, #F1F0E8, #89A8B2); */
+            /* border-radius: 24px; */
+            display: none;
+        }
+
+        .usermessage {
+            border-radius: 12px 12px 0 12px;
+            align-self: self-end;
+        }
+
+        .botmessage {
+            border-radius: 12px 12px 12px 0;
+            align-self: self-start;
+        }
+
+        .chat {
+            background-color: #B3C8CF;
+            color: #F1F0E8;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="w-full h-[90vh] lg:h-screen lg:flex items-center">
+         <i id="menu-btn" class="ri-menu-2-line w-22 h-12 bg-[#89A8B2] text-2xl text-[#F1F0E8] lg:hidden fixed  z-[9] top-2 left-2 rounded-md  flex items-center justify-center px-4 py-4"></i>
+        <div id="menu" class="h-full bottom-0 lg:relative hidden fixed lg:block z-[8] w-full lg:w-1/5">
+            <div class="w-full h-[10%] bg-[#E5E1DA] flex items-center justify-center ">
+                <div onclick="newChat()"
+                    class="w-[90%] h-[90%] bg-[#B3C8CF] rounded-full text-center content-center cursor-pointer text-[#F1F0E8]">
+                    Create new chat</div>
+            </div>
+            <div id="chats" class="w-full h-[90%] bg-[#E5E1DA] overflow-y-scroll">
+            </div>
+        </div>
+        <div class="h-full lg:w-4/5 w-full flex flex-col">
+            <div id="messages"
+                class="lg:h-[90%] h-[90%] w-full flex gap-4 flex-col overflow-y-scroll bg-[#F1F0E8] relative p-4">
+            </div>
+            <div class="h-[10%] w-full bg-[#B3C8CF] flex items-center justify-around px-2 lg:px-4">
+                <input  id="input" placeholder="Enter you message." autocomplete="false" type="text"
+                    class="lg:w-[80%] w-[70%] h-10 p-4 outline-none rounded-lg">
+                <button onclick="sendAndReciveMsg(localStorage.getItem('chatId'))"
+                    class="w-50 h-10 bg-[#89A8B2] px-6 py-2 rounded-md text-[#F1F0E8] ">Send</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
